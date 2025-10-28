@@ -7,11 +7,14 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"src/test/resources/features/"},
-                 glue = {"stepdefinition", "hooks"},
-                 //dryRun = true,
-                //tags ="@Map",
-             //monochrome = true,  this option is for formated result which is not used anymore due to formatted result. but we use pretty plugin for pretty result
-                 plugin = {"pretty","json:target/reports/report.json" }, publish = true)
+        glue = {"stepdefinition", "hooks"},
+        //dryRun = true,
+        //tags ="@Map",
+        //monochrome = true,  this option is for formated result which is not used anymore due to formatted result. but we use pretty plugin for pretty result
+        plugin = {"pretty",
+                "json:target/reports/report.json",
+                "json:target/reports/report.xml",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}, publish = false)
 
 public class TestRunner {
 

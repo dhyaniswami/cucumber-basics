@@ -11,7 +11,8 @@ import org.junit.runner.RunWith;
                  //dryRun = true,
                 //tags ="@Map",
              //monochrome = true,  this option is for formated result which is not used anymore due to formatted result. but we use pretty plugin for pretty result
-                 plugin = {"pretty"}, publish = true)
+                 plugin = {"pretty","json:target/reports/report.json" }, publish = true)
+
 public class TestRunner {
 
 
